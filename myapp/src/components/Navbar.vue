@@ -1,0 +1,19 @@
+<template>
+  <div class="flex justify-between items-center p-4">
+    <router-link to="/products">
+      <h1 class="text-4xl font-bold">Products</h1>
+    </router-link>
+    <router-link
+      :to="{ name: 'CartPage' }"
+      class="flex rounded-md text-2xl font-semibold"
+    >
+      <Button class="px-8"
+        >Cart<ShoppingCartIcon class="h-8 w-8 ml-2"
+      /></Button>
+    </router-link>
+  </div>
+</template>
+<script setup>
+import Button from "./Button.vue";
+import { ShoppingCartIcon } from "@heroicons/vue/24/outline";
+</script>
