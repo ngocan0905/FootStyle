@@ -4,22 +4,42 @@
       <div class="flex flex-col">
         <div>
           <h3 class="text-3xl font-semibold">Color</h3>
-          <div class="grid grid-cols-6 lg:grid-cols-3">
-            <Button class="bg-red-300 mt-1 mr-1">Red</Button>
-            <Button class="bg-green-300 mt-1 mr-1">green</Button>
-            <Button class="bg-yellow- mt-1 mr-1">yellow</Button>
-            <Button class="bg-gray-300 mt-1 mr-1">gray</Button>
-            <Button class="bg-pink-300 mt-1 mr-1">pink</Button>
-            <Button class="bg-purple-300 mt-1 mr-1">purple</Button>
-            <Button class="bg-cyan-300 mt-1 mr-1">cyan</Button>
+          <div class="grid grid-cols-5 md:grid-cols-6 lg:grid-cols-3">
+            <Button class="justify-center hover:bg-red-300 mt-1 mr-1"
+              >Red</Button
+            >
+            <Button class="justify-center hover:bg-green-300 mt-1 mr-1"
+              >Green</Button
+            >
+            <Button class="justify-center hover:bg-yellow-300 mt-1 mr-1"
+              >Yellow</Button
+            >
+            <Button class="justify-center hover:bg-gray-300 mt-1 mr-1"
+              >Gray</Button
+            >
+            <Button class="justify-center hover:bg-pink-300 mt-1 mr-1"
+              >Pink</Button
+            >
+            <Button class="justify-center hover:bg-purple-300 mt-1 mr-1"
+              >Purple</Button
+            >
+            <Button class="justify-center hover:bg-cyan-300 mt-1 mr-1"
+              >Cyan</Button
+            >
           </div>
         </div>
         <div>
-          <h3 class="text-3xl font-semibold">Size: 0</h3>
+          <h3 class="text-3xl font-semibold">Size: {{ size }}</h3>
           <div class="flex">
-            <MinusSmallIcon class="h-6 w-6 cursor-pointer" /><input
+            <MinusSmallIcon
+              class="h-6 w-6 cursor-pointer"
+              @click="size--"
+            /><input
               type="range"
-            /><PlusSmallIcon class="h-6 w-6 cursor-pointer" />
+              v-model="size"
+              max="50"
+              min="35"
+            /><PlusSmallIcon class="h-6 w-6 cursor-pointer" @click="size++" />
           </div>
         </div>
       </div>
@@ -91,4 +111,5 @@ watch(
     data.value = products.find((p) => p.id === newId);
   }
 );
+const size = ref(39);
 </script>

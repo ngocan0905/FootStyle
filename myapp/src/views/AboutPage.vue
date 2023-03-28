@@ -11,12 +11,12 @@
             About Us
           </h1>
           <p class="font-normal text-base leading-6 text-gray-600 indent-6">
-            Chào mừng quý khách đến với trang about page của chúng tôi. Chúng
-            tôi là một đội ngũ các chuyên gia, những người đam mê thể thao và
-            thời trang, một số trong số chúng tôi đã từng làm việc trong ngành
-            bán lẻ và sản xuất giày dép, và tất cả chúng tôi đều có chung một
-            mục tiêu đó là mang đến cho khách hàng của mình những sản phẩm và
-            dịch vụ tốt nhất.
+            Anh Bi đẹp trai vãi ò, nói độ đẹp trai anh Bi là ghế vì không phải
+            bàn. Không biết nói gì nên viết đại để canh csss, đánh aram m thiện
+            ơi, chán vc. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Esse dolor cum neque quibusdam maxime ratione, laborum
+            aspernatur nemo ut qui obcaecati id quis enim totam voluptatibus
+            porro expedita, eveniet praesentium.
           </p>
         </div>
         <div class="w-full lg:w-8/12">
@@ -36,15 +36,14 @@
             Our Story
           </h1>
           <p class="font-normal text-base leading-6 text-gray-600">
-            Có một người trẻ tên là Tèo, anh ta luôn yêu thích thể thao và đặc
-            biệt là bóng đá. Tèo luôn tìm kiếm những đôi giày đẹp và thoải mái
-            để có thể di chuyển linh hoạt trên sân cỏ.
+            Có một người trẻ tên là Bi, anh ta luôn yêu thích thể thao và đặc
+            biệt là bóng đá. Bi luôn tìm kiếm những đôi giày đẹp và thoải mái để
+            có thể di chuyển linh hoạt trên sân cỏ.
           </p>
           <p class="inset-6 mt-4 font-normal text-base leading-6 text-gray-600">
-            Tuy nhiên, Tèo thấy rằng ở thị trường hiện nay, đôi giày nào cũng
-            đắt và chất lượng cũng không đảm bảo. Với tình yêu với bóng đá và
-            niềm đam mê với thời trang, Tèo quyết định sáng lập thương hiệu
-            Footstyle.
+            Tuy nhiên, Bi thấy rằng ở thị trường hiện nay, đôi giày nào cũng đắt
+            và chất lượng cũng không đảm bảo. Với tình yêu với bóng đá và niềm
+            đam mê với thời trang, Bi quyết định sáng lập thương hiệu Footstyle.
           </p>
         </div>
         <div class="w-full lg:w-8/12 lg:pt-8">
