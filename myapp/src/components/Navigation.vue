@@ -9,16 +9,28 @@
       <div
         class="text-2xl font-semibold hidden lg:flex relative justify-end items-center flex-1 py-4"
       >
-        <router-link :to="{ name: 'Products' }" class="mx-3 px-3 font-medium">
+        <router-link
+          :to="{ name: 'Products' }"
+          class="mx-3 px-3 font-medium hover:underline"
+        >
           Products
         </router-link>
-        <router-link :to="{ name: 'Contact' }" class="mx-3 px-3 font-medium">
+        <router-link
+          :to="{ name: 'Contact' }"
+          class="mx-3 px-3 font-medium hover:underline"
+        >
           Contact</router-link
         >
-        <router-link :to="{ name: 'About' }" class="mx-3 px-3 font-medium">
+        <router-link
+          :to="{ name: 'About' }"
+          class="mx-3 px-3 font-medium hover:underline"
+        >
           About</router-link
         >
-        <router-link :to="{ name: 'Login' }" class="mx-3 px-3 font-medium">
+        <router-link
+          :to="{ name: 'Login' }"
+          class="mx-3 px-3 font-medium hover:underline"
+        >
           Account</router-link
         >
       </div>
