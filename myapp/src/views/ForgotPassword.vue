@@ -1,6 +1,6 @@
 <template>
   <div
-    class="uppercase flex h-screen justify-center items-center m-[0,auto] w-[90%] md:w-full bg-gradient-to-l from-gray-200 to-gray-50"
+    class="uppercase flex h-screen justify-center items-center m-[0,auto] md:w-full bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200"
   >
     <Modal
       v-if="modalActive"
@@ -25,18 +25,18 @@
           <input
             type="email"
             placeholder="example@gmail.com"
-            class="pl-10 bg-gray-200 rounded-lg leading-tight focus:bg-inherit focus:border-inherit py-2 placeholder:text-gray-900 text-gray-900"
+            class="pl-10 rounded-lg leading-tight focus:bg-inherit focus:border-inherit py-2 placeholder:text-gray-900 text-gray-900"
             v-model="email"
           />
           <EnvelopeIcon
-            class="h-6 md:h-8 w-6 md:w-8 text-gray-900 absolute ml-1"
+            class="h-6 mt-1 md:h-8 w-6 md:w-8 text-gray-900 absolute ml-1"
           />
         </div>
       </div>
 
       <Button
         @click.prevent="modalActive = !modalActive"
-        class="drop-shadow-2xl uppercase bg-gray-600 px-16 py-2 rounded-lg text-gray-100 hover:bg-gray-700"
+        class="drop-shadow-2xl uppercase bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-white py-2 rounded-lg w-fit px-8"
         >reset</Button
       >
       <div class="angle"></div>

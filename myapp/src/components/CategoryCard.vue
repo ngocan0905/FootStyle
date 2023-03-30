@@ -1,4 +1,6 @@
 <script setup>
+import Button from "./Button.vue";
+
 const prosp = defineProps({
   cate: {
     type: String,
@@ -9,15 +11,12 @@ const prosp = defineProps({
   <div
     v-for="(item, index) in cate"
     :key="index"
-    class="border border-black overflow-hidden m-1 rounded-md"
+    class="overflow-hidden m-1 rounded-md"
   >
-    <img
-      :src="item.imageUrl"
-      alt=""
-      class="object-cover w-full hover:scale-105"
-    />
-    <div class="text-sm text-center font-semibold">
+    <Button
+      class="text-lg text-center font-semibold bg-white shadow-glassmorphism rounded-md w-full"
+    >
       {{ item.name }}
-    </div>
+    </Button>
   </div>
 </template>

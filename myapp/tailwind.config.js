@@ -7,6 +7,7 @@ module.exports = {
       backgroundColor: {
         modal: "rgba(56, 53, 56, 0.8)",
       },
+
       cursor: {},
     },
   },

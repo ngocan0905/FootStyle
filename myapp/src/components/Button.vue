@@ -1,7 +1,8 @@
 <template>
   <button
-    class="py-1 px-2 bg-slate-200 border-2 border-black hover:bg-gray-100 hover:shadow-2xl rounded-lg w-[full-2] flex"
+    class="font-semibold text-gray-600 relative py-1 px-2 flex items-center justify-center overflow-hidden"
   >
-    <slot></slot>
+    <slot class=""></slot>
   </button>
 </template>
+<style scoped></style>

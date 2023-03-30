@@ -1,61 +1,72 @@
 <template>
-  <main>
-    <div class="flex flex-col lg:flex-row px-2">
-      <form class="flex flex-col border-black border-2 p-4 rounded-md">
-        <div class="flex items-center w-fit">
-          <div class="flex py-4 mr-1">
+  <main class="min-h-screen">
+    <div class="container mx-auto pt-8 pb-16">
+      <div
+        class="bg-white rounded-lg overflow-hidden shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30"
+      >
+        <div
+          class="flex items-center justify-center p-4 border-b-2 border-gray-300"
+        >
+          <form class="relative w-full max-w-lg">
             <input
-              type="email"
-              placeholder="Searching..."
-              class="pl-10 bg-transparent border-2 border-black rounded-lg leading-tight focus:bg-inherit focus:border-inherit py-2 text-black"
-              v-model="email"
+              type="text"
+              placeholder="Search products"
+              class="pl-12 pr-4 py-2 block w-full rounded-md bg-transparent border-2 border-gray-400 focus:border-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
+              v-model="text"
             />
-            <MagnifyingGlassIcon
-              class="h-6 md:h-8 w-6 md:w-8 text-black absolute ml-1 p-1"
-            />
+            <button
+              type="submit"
+              class="absolute inset-y-0 left-0 flex items-center pl-3"
+            >
+              <MagnifyingGlassIcon class="h-6 w-6 text-gray-500" />
+            </button>
+          </form>
+          <Button
+            class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-white py-2 mx-4 rounded-md shadow-glassmorphism hover:shadow-2xl w-full max-w-xs"
+            >Apply</Button
+          >
+        </div>
+
+        <div class="p-8">
+          <h3 class="text-lg font-semibold text-gray-700">Category</h3>
+          <div
+            class="grid gap-8 grid-cols-2 md:grid-cols-4 lg:grid-cols-5 backdrop-filter"
+          >
+            <CategoryCard :cate="cate" />
           </div>
-          <Button>Apply</Button>
         </div>
-        <h3 class="text-3xl font-semibold">Category</h3>
-        <div class="grid grid-cols-4 lg:grid-cols-2">
-          <CategoryCard :cate="cate" />
+
+        <div class="p-8 backdrop-filter">
+          <h3 class="text-lg font-semibold text-gray-700">Color</h3>
+          <div class="flex justify-between mt-4">
+            <Button
+              class="bg-red-300 hover:bg-red-400 text-gray-600 py-2 px-4 rounded-md flex-1 mr-4"
+              >Red</Button
+            >
+            <Button
+              class="bg-green-300 hover:bg-green-400 text-gray-600 py-2 px-4 rounded-md flex-1 mr-4"
+              >Green</Button
+            >
+            <Button
+              class="bg-yellow-300 hover:bg-yellow-400 text-gray-600 py-2 px-4 rounded-md flex-1 mr-4"
+              >Yellow</Button
+            >
+            <Button
+              class="bg-gray-300 hover:bg-gray-400 text-gray-600 py-2 px-4 rounded-md flex-1 mr-4"
+              >Gray</Button
+            >
+            <Button
+              class="bg-pink-300 hover:bg-pink-400 text-gray-600 py-2 px-4 rounded-md flex-1"
+              >Pink</Button
+            >
+          </div>
         </div>
-        <h3 class="text-3xl font-semibold">Color</h3>
-        <div class="grid grid-cols-5 md:grid-cols-6 lg:grid-cols-3">
-          <Button
-            class="rounded-md border hover:bg-red-300 mt-1 mr-1 justify-center"
-            >Red</Button
-          >
-          <Button class="rounded-md hover:bg-green-300 mt-1 mr-1 justify-center"
-            >Green</Button
-          >
-          <Button
-            class="rounded-md hover:bg-yellow-300 mt-1 mr-1 justify-center"
-            >Yellow</Button
-          >
-          <Button class="rounded-md hover:bg-gray-300 mt-1 mr-1 justify-center"
-            >Gray</Button
-          >
-          <Button class="rounded-md hover:bg-pink-300 mt-1 mr-1 justify-center"
-            >Pink</Button
-          >
-          <Button
-            class="rounded-md hover:bg-purple-300 mt-1 mr-1 justify-center"
-            >Purple</Button
-          >
-          <Button class="rounded-md hover:bg-cyan-300 mt-1 mr-1 justify-center"
-            >Cyan</Button
-          >
-          <Button class="rounded-md hover:bg-gray-700 mt-1 mr-1 justify-center"
-            >Black</Button
-          >
-        </div>
-      </form>
+      </div>
 
       <div
-        class="flex flex-wrap gap-8 ml-0 lg:ml-8 w-fit justify-center border-2 border-black rounded-md my-4"
+        class="mt-8 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 backdrop-filter backdrop-blur-md bg-opacity-50"
       >
-        <Card :items="items"></Card>
+        <Card :items="items" />
       </div>
     </div>
   </main>
@@ -69,3 +80,6 @@ import { MagnifyingGlassIcon } from "@heroicons/vue/24/outline";
 const items = products;
 const cate = category;
 </script>
+<Style scoped>
+
+</Style>

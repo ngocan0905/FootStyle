@@ -1,16 +1,24 @@
 <template>
-  <navigation v-if="!navigation.value" />
-  <main class=" ">
-    <navbar v-if="!navbar.value && !navigation.value" />
-    <router-view />
-  </main>
-  <Footer v-if="!navigation.value" />
+  <div
+    class="bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 transition duration-700 ease-in-out"
+  >
+    <navigation
+      v-if="!navigation.value"
+      :class="{ fixed: isHeaderFixed }"
+      class="header"
+    />
+    <main class=" ">
+      <navbar v-if="!navbar.value && !navigation.value" />
+      <router-view />
+    </main>
+    <Footer v-if="!navigation.value" />
+  </div>
 </template>
 <script setup>
 import Footer from "./components/Footer.vue";
 import Navbar from "./components/Navbar.vue";
 import Navigation from "./components/Navigation.vue";
-import { reactive, onMounted, watch } from "vue";
+import { reactive, onMounted, watch, ref, onUnmounted, computed } from "vue";
 import { useRouter } from "vue-router";
 
 const navigation = reactive({ value: null });
@@ -42,11 +50,23 @@ function checkRouteNavbar() {
 onMounted(() => {
   checkRoute();
   checkRouteNavbar();
+  window.addEventListener("scroll", handleScroll);
 });
-
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 watch(router.currentRoute, () => {
   checkRoute();
   checkRouteNavbar();
+});
+
+const scrollPosition = ref(window.scrollY);
+
+const handleScroll = () => {
+  scrollPosition.value = window.scrollY;
+};
+const isHeaderFixed = computed(() => {
+  return scrollPosition.value > 100;
 });
 </script>
 <style scoped>
@@ -54,5 +74,7 @@ watch(router.currentRoute, () => {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+.header {
 }
 </style>
