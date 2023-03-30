@@ -66,7 +66,7 @@ const handleScroll = () => {
   scrollPosition.value = window.scrollY;
 };
 const isHeaderFixed = computed(() => {
-  return scrollPosition.value > 100;
+  return scrollPosition.value > 200;
 });
 </script>
 <style scoped>

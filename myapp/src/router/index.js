@@ -1,25 +1,31 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/ProductsPage.vue";
+import { auth } from "@/config/firebase";
 
+const requireAuth = (to, from, next) => {
+  const user = auth.currentUser;
+  if (!user) next({ name: "Login", params: {} });
+  else next();
+};
 const routes = [
   {
-    path: "/products",
-    name: "Products",
-    component: Home,
-  },
-  {
     path: "/",
-    redirect: "/products",
+    name: "Home",
+    component: Home,
+    beforeEnter: requireAuth,
   },
+
   {
     path: "/products/:id",
     name: "ProductDetail",
     component: import("../views/ProductDetailPage.vue"),
+    beforeEnter: requireAuth,
   },
   {
     path: "/cart",
     name: "CartPage",
     component: import("../views/CartPage.vue"),
+    beforeEnter: requireAuth,
   },
   {
     path: "/:pathMatch(.*)*",
@@ -44,11 +50,24 @@ const routes = [
     path: "/about",
     name: "About",
     component: import("../views/AboutPage.vue"),
+    beforeEnter: requireAuth,
   },
   {
     path: "/contact",
     name: "Contact",
     component: import("../views/ContactPage.vue"),
+    beforeEnter: requireAuth,
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: import("../views/profile.vue"),
+    beforeEnter: requireAuth,
+  },
+  {
+    path: "/logout",
+    name: "Logout",
+    component: import("../views/Logout.vue"),
   },
 ];
 

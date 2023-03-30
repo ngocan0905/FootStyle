@@ -2,7 +2,7 @@
   <div
     class="flex justify-between items-center p-4 bbackdrop-filter backdrop-blur-lg bg-opacity-10 bg-gray-200 z-50"
   >
-    <router-link to="/products">
+    <router-link :to="{ name: 'Home' }">
       <h1 class="text-4xl font-bold text-gray-600">Products</h1>
     </router-link>
     <router-link

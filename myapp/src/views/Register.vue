@@ -5,6 +5,7 @@
     <form
       action=""
       class="p-[0,10] w-full relative flex flex-col justify-center items-center"
+      @submit.prevent="onSubmit"
     >
       <p class="">already have account ?</p>
       <router-link
@@ -25,7 +26,7 @@
             type="text"
             placeholder="User name"
             class="pl-10 rounded-lg leading-tight focus:bg-inherit focus:border-inherit py-2 text-gray-900 placeholder:text-gray-900"
-            v-model="name"
+            v-model="fullName"
           />
           <UserCircleIcon
             class="h-6 mt-1 md:h-8 w-6 md:w-8 text-gray-900 absolute ml-1"
@@ -58,13 +59,20 @@
           />
         </div>
       </div>
-
-      <Button
-        @click.prevent=""
-        class="drop-shadow-2xl uppercase bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-white px-8 py-2 rounded-lg"
-        >sign up</Button
-      >
-      <div class="angle"></div>
+      <div>
+        <Button
+          v-if="!isPending"
+          type="submit"
+          class="drop-shadow-2xl uppercase bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-white px-8 py-2 rounded-lg"
+          >sign up</Button
+        >
+        <Button
+          v-else
+          type="submit"
+          class="drop-shadow-2xl uppercase bg-gradient-to-r from-gray-400 via-purple-200 to-slate-400 text-white px-8 py-2 rounded-lg"
+          >loading...</Button
+        >
+      </div>
     </form>
     <div class="bg-transparent h-full w-full hidden md:flex"></div>
   </div>
@@ -74,11 +82,18 @@ import {
   ArrowLongLeftIcon,
   EnvelopeIcon,
   LockClosedIcon,
-  MinusSmallIcon,
   UserCircleIcon,
 } from "@heroicons/vue/24/outline";
 import { ref } from "vue";
-const name = ref(null);
-const email = ref(null);
-const password = ref(null);
+import { useRouter } from "vue-router";
+import { useSignUp } from "@/logic/useSignUp";
+const router = useRouter();
+const { error, isPending, signUp } = useSignUp();
+const fullName = ref("");
+const email = ref("");
+const password = ref("");
+async function onSubmit() {
+  await signUp(email.value, password.value, fullName.value);
+  if (!error.value) router.push({ name: "Home", params: {} });
+}
 </script>

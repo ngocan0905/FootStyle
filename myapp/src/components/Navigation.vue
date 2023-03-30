@@ -6,7 +6,7 @@
       <div class="flex items-center">
         <router-link
           class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-500 to-purple-500 hover:bg-clip-text hover:bg-gradient-to-br hover:from-purple-500 hover:to-blue-500"
-          :to="{ name: 'Products' }"
+          :to="{ name: 'Home' }"
         >
           FootStyle
         </router-link>
@@ -15,7 +15,7 @@
         class="text-2xl font-semibold hidden lg:flex relative justify-end items-center flex-1 py-4"
       >
         <router-link
-          :to="{ name: 'Products' }"
+          :to="{ name: 'Home' }"
           class="mx-3 px-3 font-medium hover:underline"
         >
           Products
@@ -33,7 +33,7 @@
           About
         </router-link>
         <router-link
-          :to="{ name: 'Login' }"
+          :to="{ name: 'Profile' }"
           class="mx-3 px-3 font-medium hover:underline"
         >
           Account
@@ -48,10 +48,10 @@
     <transition name="mobile-nav" class="z-auto fixed">
       <ul
         v-if="mobileNav"
-        class="p-5 w-full flex flex-row h-[100px] relative top-0 text-black left-0 text-2xl font-semibold shadow-2xl"
+        class="p-5 w-full flex flex-row h-[100px] relative top-0 text-black left-0 text-sm font-semibold justify-center"
       >
         <router-link
-          :to="{ name: 'Products' }"
+          :to="{ name: 'Home' }"
           @click="mobileNav = !mobileNav"
           class="p-3"
         >
@@ -75,7 +75,7 @@
         >
         <hr />
         <router-link
-          :to="{ name: 'Login' }"
+          :to="{ name: 'Profile' }"
           @click="mobileNav = !mobileNav"
           class="p-3"
         >
