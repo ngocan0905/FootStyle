@@ -23,6 +23,7 @@
         ><Button class=""> Detail </Button></router-link
       ><Button
         class="text-white bg-gradient-to-r from-purple-400 to-pink-400 rounded-md"
+        @click="addProductToCart(item)"
         >Buy now</Button
       >
     </div>
@@ -30,11 +31,19 @@
 </template>
 <script setup>
 import Button from "./Button.vue";
+import { cartItems } from "@/fake-data";
+import { ref } from "vue";
 const { props } = defineProps({
   items: {
     type: Object,
+    required: true,
   },
 });
+const cart = ref(cartItems);
+function addProductToCart(product) {
+  cart.value.push(product);
+  console.log(cart.value);
+}
 </script>
 <style>
 .shadow-glassmorphism {

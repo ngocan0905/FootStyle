@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-auto px-16">
+  <div class="w-full h-full px-16">
     <h1 class="text-5xl py-4 text-center font-bold text-gray-800">
       Shopping cart
     </h1>
@@ -38,6 +38,7 @@
           </div>
           <Button
             class="bg-red-500 text-white hover:bg-red-600 px-6 py-3 rounded-lg font-semibold"
+            @click="removeProduct"
           >
             Remove
           </Button>
@@ -58,12 +59,19 @@
 </template>
 <script setup>
 import { cartItems } from "@/fake-data";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import Button from "@/components/Button.vue";
 import { MinusCircleIcon, PlusCircleIcon } from "@heroicons/vue/24/outline";
 
-const products = cartItems;
+const products = ref(cartItems);
 const totalPrice = computed(() =>
-  products.reduce((s, product) => s + Number(product.price), 0)
+  products.value.reduce((s, product) => s + Number(product.price), 0)
 );
+
+const removeProduct = (productId) => {
+  const index = products.value.findIndex((item) => item.id === productId);
+  if (index !== 1) {
+    products.value.splice(index, 1);
+  }
+};
 </script>

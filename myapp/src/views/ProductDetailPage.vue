@@ -34,16 +34,14 @@
             <MinusSmallIcon
               class="h-6 w-6 cursor-pointer"
               @click="size--"
-            /><input
-              type="range"
-              v-model="size"
-              max="50"
-              min="35"
-            /><PlusSmallIcon class="h-6 w-6 cursor-pointer" @click="size++" />
+            /><input type="range" v-model="size" max="50" min="35" />
+            <PlusSmallIcon class="h-6 w-6 cursor-pointer" @click="size++" />
           </div>
         </div>
       </div>
-      <div><hr class="border-2" /></div>
+      <div>
+        <hr class="border-2" />
+      </div>
       <div
         class="block md:grid grid-cols-3 max-w-screen-lg border-2 py-8 px-4 rounded-lg"
       >
@@ -64,7 +62,10 @@
           <div class="text-3xl">Overview</div>
           <div>{{ data.description }}</div>
           <div class="flex justify-end">
-            <Button>Add to <ShoppingCartIcon class="w-6 h-6" /></Button>
+            <Button
+              >Add to
+              <ShoppingCartIcon class="w-6 h-6" />
+            </Button>
           </div>
         </div>
       </div>
